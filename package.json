@@ -1,0 +1,26 @@
+{
+    "name": "migrate",
+    "version": "1.0.0",
+    "description": "A package to make database migration easy",
+    "main": "index.ts",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Abed01-lab/migrate.git"
+    },
+    "keywords": [
+        "database",
+        "migrate",
+        "node",
+        "migrations"
+    ],
+    "author": "Abed01-lab",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Abed01-lab/migrate/issues"
+    },
+    "homepage": "https://github.com/Abed01-lab/migrate#readme"
+}
