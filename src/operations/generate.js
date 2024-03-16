@@ -16,18 +16,20 @@ export default async function (dirname, name) {
         console.log(red("meta.json is not found in migration folder"));
         return;
     }
-    const data = fs.readFileSync(`${dirname}/migrations/meta.json`, "utf8");
-    const meta = JSON.parse(data);
 
-    const timestamp = Date.now();
     try {
+        const data = fs.readFileSync(`${dirname}/migrations/meta.json`, "utf8");
+        const meta = JSON.parse(data);
+
+        const timestamp = Date.now();
         const fileName = `${timestamp}_${name}.sql`;
+
         fs.writeFileSync(`${dirname}/migrations/${fileName}`, "");
         meta.migrations.pending.push(fileName);
-        console.log(green(`Migration ${fileName} created`));
     } catch (error) {
         console.log(error);
     } finally {
         fs.writeFileSync(`${dirname}/migrations/meta.json`, JSON.stringify(meta));
+        console.log(green(`Migration ${fileName} created`));
     }
 }
