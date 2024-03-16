@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { error, warning } from "./lib/chalk.js";
+import { red, yellow } from "./lib/chalk.js";
 import { NO_OPERATION_ERROR } from "./lib/cli-errors.js";
 import generate from "./operations/generate.js";
 import init from "./operations/init.js";
@@ -19,6 +19,6 @@ switch (operation) {
     case "migrate":
     case "reset":
     default:
-        console.log(error(NO_OPERATION_ERROR.message));
-        console.log(warning(NO_OPERATION_ERROR.description));
+        console.log(red(NO_OPERATION_ERROR.message));
+        console.log(yellow(NO_OPERATION_ERROR.description));
 }
