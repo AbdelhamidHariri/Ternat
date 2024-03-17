@@ -1,5 +1,6 @@
 import fs from "fs";
 import { red, green, yellow } from "../lib/chalk.js";
+import { getMeta } from "../lib/meta.js";
 
 export default async function (dirname, name) {
     if (!name) {
@@ -12,24 +13,22 @@ export default async function (dirname, name) {
         return;
     }
 
-    if (!fs.existsSync(`${dirname}/migrations/meta.json`)) {
-        console.log(red("meta.json is not found in migration folder"));
+    const meta = getMeta();
+
+    if (!meta) {
+        console.log(red("meta.json not found"));
         return;
     }
 
     try {
-        const data = fs.readFileSync(`${dirname}/migrations/meta.json`, "utf8");
-        const meta = JSON.parse(data);
-
         const timestamp = Date.now();
         const fileName = `${timestamp}_${name}.sql`;
 
         fs.writeFileSync(`${dirname}/migrations/${fileName}`, "");
         meta.migrations.pending.push(fileName);
+        console.log(green(`Migration ${fileName} created`));
+        fs.writeFileSync(`${dirname}/migrations/meta.json`, JSON.stringify(meta));
     } catch (error) {
         console.log(error);
-    } finally {
-        fs.writeFileSync(`${dirname}/migrations/meta.json`, JSON.stringify(meta));
-        console.log(green(`Migration ${fileName} created`));
     }
 }
