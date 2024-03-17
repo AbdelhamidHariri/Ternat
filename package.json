@@ -6,7 +6,7 @@
     "type": "module",
     "bin": "./src/index.js",
     "scripts": {
-        "migrate": "node --inspect ./src/index.js migrate"
+        "migrate": "node./src/index.js migrate"
     },
     "repository": {
         "type": "git",
