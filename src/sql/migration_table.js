@@ -1,5 +1,6 @@
+export const migrationTable = `
 CREATE TABLE MIGRATIONS (
-  id VARCHAR(32) NOT NULL,
-  name VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL PRIMARY KEY,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-)
+  );
+`;
