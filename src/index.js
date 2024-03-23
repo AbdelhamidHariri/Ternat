@@ -23,7 +23,7 @@ switch (operation) {
     case "migrate":
         migrate(dirname);
         break;
-    case "reset":
+    case "status":
         status(dirname);
         break;
     default:

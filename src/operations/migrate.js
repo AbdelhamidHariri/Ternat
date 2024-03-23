@@ -56,6 +56,6 @@ export default async function (dirname) {
     } catch (error) {
         console.log(error);
     } finally {
-        db.end();
+        await db.end();
     }
 }
