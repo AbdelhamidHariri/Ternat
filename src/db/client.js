@@ -6,6 +6,6 @@ export const client = (config) =>
     new Client({
         host: config.host,
         port: config.port,
-        user: config.username,
+        user: config.user,
         password: config.password,
     });

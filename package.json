@@ -1,6 +1,6 @@
 {
-    "name": "migrate",
-    "version": "1.0.0",
+    "name": "ternat",
+    "version": "1.0.1",
     "description": "A package to make database migration easy",
     "main": "./src/index.js",
     "type": "module",
