@@ -1,32 +1,40 @@
 {
-    "name": "ternat",
-    "version": "1.0.1",
-    "description": "A package to make database migration easy",
-    "main": "./src/index.js",
-    "type": "module",
-    "bin": "./src/index.js",
-    "scripts": {
-        "migrate": "node./src/index.js migrate"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Abed01-lab/migrate.git"
-    },
-    "keywords": [
-        "database",
-        "migrate",
-        "node",
-        "migrations"
-    ],
-    "author": "Abed01-lab",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/Abed01-lab/migrate/issues"
-    },
-    "homepage": "https://github.com/Abed01-lab/migrate#readme",
-    "dependencies": {
-        "chalk": "^5.3.0",
-        "dotenv": "^16.4.5",
-        "pg": "^8.11.3"
-    }
+  "name": "ternat",
+  "version": "1.0.1",
+  "description": "A package to make database migration easy",
+  "main": "./src/index.js",
+  "type": "module",
+  "bin": "./src/index.js",
+  "scripts": {
+    "migrate": "node./src/index.js migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abed01-lab/migrate.git"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "keywords": [
+    "database",
+    "migrate",
+    "node",
+    "migrations"
+  ],
+  "author": "Abed01-lab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abed01-lab/migrate/issues"
+  },
+  "homepage": "https://github.com/Abed01-lab/migrate#readme",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "dotenv": "^16.4.5",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "semantic-release": "^23.0.8"
+  }
 }
