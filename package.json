@@ -4,7 +4,9 @@
   "description": "A package to make database migration easy",
   "main": "./src/index.js",
   "type": "module",
-  "bin": "./src/index.js",
+  "bin": {
+    "ternat": "src/index.js"
+  },
   "scripts": {
     "migrate": "node./src/index.js migrate"
   },
