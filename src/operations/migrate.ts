@@ -9,7 +9,7 @@ export default async function (dirname: string) {
     return;
   }
 
-  const { default: config } = await import(`${dirname}/ternat.config.cjs`);
+  const { config } = await import(`${dirname}/ternat.config.cjs`);
 
   if (!config) {
     console.log(red("No config file found"));

@@ -86,7 +86,7 @@ function migrate (dirname) {
             console.log(red("ternat.config.cjs is missing"));
             return;
         }
-        const { default: config } = yield import(`${dirname}/ternat.config.cjs`);
+        const { config } = yield import(`${dirname}/ternat.config.cjs`);
         if (!config) {
             console.log(red("No config file found"));
             return;
