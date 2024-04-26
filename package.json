@@ -27,9 +27,9 @@
   "author": "Abed01-lab",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Abed01-lab/migrate/issues"
+    "url": "https://github.com/AbdelhamidHariri/Ternat/issues"
   },
-  "homepage": "https://github.com/Abed01-lab/migrate#readme",
+  "homepage": "https://github.com/AbdelhamidHariri/Ternat#readme",
   "dependencies": {
     "@types/pg": "^8.11.5",
     "chalk": "^4.0.0",
