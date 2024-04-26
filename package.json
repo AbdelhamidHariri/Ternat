@@ -3,12 +3,11 @@
   "version": "1.0.1",
   "description": "A package to make database migration easy",
   "main": "./src/index.js",
-  "type": "module",
   "bin": {
-    "ternat": "src/index.js"
+    "ternat": "index.js"
   },
   "scripts": {
-    "migrate": "node./src/index.js migrate"
+    "build": "tsc && npx rollup build/index.js --file index.js --format cjs"
   },
   "repository": {
     "type": "git",
@@ -32,7 +31,8 @@
   },
   "homepage": "https://github.com/Abed01-lab/migrate#readme",
   "dependencies": {
-    "chalk": "^5.3.0",
+    "@types/pg": "^8.11.5",
+    "chalk": "^4.0.0",
     "dotenv": "^16.4.5",
     "pg": "^8.11.3"
   },

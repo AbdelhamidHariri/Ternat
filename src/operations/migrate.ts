@@ -1,15 +1,15 @@
-import { client } from "../db/client.js";
-import { green, red } from "../lib/chalk.js";
+import { client } from "../db/client";
+import { green, red } from "../lib/chalk";
 import fs from "fs";
-import { migrationTable } from "../sql/migration_table.js";
+import { migrationTable } from "../sql/migration_table";
 
-export default async function (dirname) {
-  if (!fs.existsSync(`${dirname}/migrate.config.js`)) {
-    console.log(red("migrate.config.js is missing"));
+export default async function (dirname: string) {
+  if (!fs.existsSync(`${dirname}/ternat.config.cjs`)) {
+    console.log(red("ternat.config.cjs is missing"));
     return;
   }
 
-  const { default: config } = await import(`${dirname}/migrate.config.js`);
+  const { default: config } = await import(`${dirname}/ternat.config.cjs`);
 
   if (!config) {
     console.log(red("No config file found"));
@@ -41,7 +41,7 @@ export default async function (dirname) {
     const migrationFiles = fs.readdirSync(`${dirname}/migrations`);
 
     for (const migration of migrationFiles) {
-      if (!migrations.some((m) => m.name === migration)) {
+      if (!migrations.some((m: { name: string }) => m.name === migration)) {
         const content = fs.readFileSync(`${dirname}/migrations/${migration}`, "utf8");
         if (!content) {
           console.log(red(`Content of migration ${migration} is empty`));
