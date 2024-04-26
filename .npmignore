@@ -1,4 +1,4 @@
 build/
 src/
 .releaserc.json
-.tsconfig
+.tsconfig.json
