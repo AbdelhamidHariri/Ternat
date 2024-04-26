@@ -18,6 +18,8 @@ jobs:
       - env:
           CI: true
         run: npm ci
+      - name: build
+        run: npm run build
       - if: success()
         env:
           CI: true
