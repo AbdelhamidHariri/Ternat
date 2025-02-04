@@ -2,8 +2,9 @@ import { client } from "../db/client";
 import { green, red } from "../lib/chalk";
 import fs from "fs";
 import { migrationTable } from "../sql/migration_table";
+import { dirname } from "..";
 
-export default async function (dirname: string) {
+export default async function () {
   if (!fs.existsSync(`${dirname}/ternat.config.cjs`)) {
     console.log(red("ternat.config.cjs is missing"));
     return;

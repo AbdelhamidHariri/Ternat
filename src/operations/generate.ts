@@ -1,7 +1,12 @@
 import fs from "fs";
 import { red, green, yellow } from "../lib/chalk";
+import { dirname } from "..";
 
-export default async function (dirname: string, name: string) {
+interface Generate {
+  name: string;
+}
+
+export default async function ({ name }: Generate) {
   if (!name) {
     console.log(yellow("Please specify a name for the migration"));
     return;
