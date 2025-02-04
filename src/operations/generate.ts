@@ -20,7 +20,9 @@ export default async function ({ name, transformation = false }: Generate) {
 
   try {
     const timestamp = Date.now();
-    const fileName = `${timestamp}_${name.replace(" ", "_")}.sql`;
+    const fileName = `${timestamp}_${name.replace(/\s(?=[A-Za-z0-9])/g, "_")}.sql`;
+    console.log(name);
+    console.log(fileName);
 
     if (!transformation) {
       fs.writeFileSync(`${dirname}/migrations/${fileName}`, "-- Please add you migration here");
