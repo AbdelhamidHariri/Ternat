@@ -4,10 +4,12 @@
   "description": "A package to make database migration easy",
   "main": "./src/index.js",
   "bin": {
-    "ternat": "index.js"
+    "ternat": "./dist/cjs/index.js"
   },
   "scripts": {
-    "build": "tsc && npx rollup build/index.js --file index.js --format cjs"
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "npm run build:cjs && npm run build:esm"
   },
   "repository": {
     "type": "git",

@@ -3,4 +3,5 @@ migrations
 .env
 .vscode
 build
+dist
 index.js
