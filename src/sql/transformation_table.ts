@@ -1,0 +1,6 @@
+export const transformationTable = `
+CREATE TABLE TRANSFORMATIONS (
+  name VARCHAR(255) NOT NULL PRIMARY KEY,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+  );
+`;
