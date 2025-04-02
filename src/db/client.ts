@@ -5,6 +5,7 @@ interface ConfigI {
   port: number;
   user: string;
   password: string;
+  database?: string;
 }
 
 export const client = (config: ConfigI) =>
@@ -13,4 +14,5 @@ export const client = (config: ConfigI) =>
     port: config.port,
     user: config.user,
     password: config.password,
+    database: config.database,
   });
